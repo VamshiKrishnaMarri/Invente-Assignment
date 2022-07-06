@@ -77,7 +77,7 @@ class Home extends Component{
 
     render(){ 
         const {activeId}=this.state
-        const {title,URL}=videosList[activeId]
+        const {title,URL,tags}=videosList[activeId]
         
         return(
             <div className='home-container'>
@@ -94,6 +94,7 @@ class Home extends Component{
                         <div className='video-item-container'> 
                             <ReactPlayer className="video" controls width="80vw" url={URL}/>
                             <h2 className='heading'>Now Playing: {title}</h2>
+                            {tags.map(each=><p>{each}</p>)}
                         </div>
                     </div>
                 </div>
